@@ -5,6 +5,8 @@ services:
     container_name: zipline
     image: quantopian/zipline
     build: .
+    environment:
+       - ZIPLINE_ROOT=/root/.zipline
     volumes:
        - ~/.zipline:/root/.zipline
        - ./data:/data
