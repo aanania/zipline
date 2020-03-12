@@ -1,0 +1,15 @@
+version: '3.5'
+
+services:
+  postgres:
+    container_name: zipline
+    image: quantopian/zipline
+    build: .
+    volumes:
+       - ~/.zipline:/root/.zipline
+       - ./data:/data
+       - ~/notebooks:/projects
+    ports:
+      - "8888:8888"
+    restart: unless-stopped
+  
